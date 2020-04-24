@@ -1,68 +1,105 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Single Page Applications Sprint Challenge
 
-## Available Scripts
+The sprint challenge is your chance to independently work through material and build on what you learned this week. In today's project you will build a form for Lambda Eats, a website designed to bring food to hungry coders.
 
-In the project directory, you can run:
+## Introduction
 
-### `yarn start`
+In this challenge you will be working from the `Lambda Eats` homepage to create a functional `Pizza?` button that leads to a build your own pizza custom form.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## **Self-Study Questions**
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Demonstrate your understanding of this week's concepts by answering the following free-form questions.
 
-### `yarn test`
+Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your Team Lead.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. In 1-2 sentences, explain what React's `useRouteMatch` hook is used for.
+	Using deeply nested routes while using React-Router
+2. How would you explain form validation to someone who has never programmed before?
+	Walking through a metal detector at an airport, only this is validation, and this is a website. 
+3. In 1-2 sentences, define end to end testing.
+sometimes issues come up with integration between components which can't be captured in a unit test. End to end tests are made to find these problems --(angularDocs)
+You are expected to be able to answer all these questions. Your responses contribute to your Sprint Challenge grade. Skipping this section **will** prevent you from passing this challenge.
+									lol. 
+## Instructions
 
-### `yarn build`
+### Task 1: Set Up The Project With Git
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Follow these steps to set up and work on your project:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- [ ] Create a forked copy of this project.
+- [ ] Add your project manager as collaborator on Github.
+- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!).
+- [ ] CD into the project base directory `cd lambda-eats`
+- [ ] Download project dependencies by running `npm install`
+- [ ] Start up the app using `npm start`
+- [ ] Create a new branch: git checkout -b `<firstName-lastName>`. Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [ ] Push commits: git push origin `<firstName-lastName>`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Task 2: Minimum Viable Product
 
-### `yarn eject`
+Your MVP should include, at a minimum, the following components.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [ ] A homepage that has a "/" route and links to your form (button, nav bar, or any other type of link is acceptable)
+- [ ] A form with a "/pizza" route
+- [ ] A name text input field
+- [ ] Validation for name - name must be at least 2 characters
+- [ ] Dropdown form component for pizza size
+- [ ] Checklist form component for toppings - at least 4 (hint: name each separately!)
+- [ ] Text input form component for special instructions
+- [ ] An Add to Order button that submits form and returns a database record of name, pizza size, sauce, and special instructions
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Testing MVP
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Implement the following tests in Cypress:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [ ] test that you can add text to the box
+- [ ] test that you can select multiple toppings
+- [ ] test that you can submit the form
 
-## Learn More
+You may use the following wireframe (also in a folder above) as guidance as you design your site but it is not required that you do so.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Form Wireframe:**
+![Form Wireframe](https://i.imgur.com/ii7wc0u.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Task 3: Stretch Goals
 
-### Code Splitting
+If you complete the MVP, move on to the following stretch goals. As usual, these goals represent a mix of additional at-level work in addition to work that is beyond the scope of what you've learned, but attainable with your current knowledge (and google).
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- [ ] Toggle form component for gluten free crust
+- [ ] Turn your form into a modal that pops up on the home page
+- [ ] Turn form element sections into nested routes
+- [ ] Create a `cart` page with additional form options like: delivery or pickup, the option to add utensils and straws, add a tip, etc.
+- [ ] Test more of the application with Cypress
+- [ ] Add functionality to your order button that it leads to a Congrats! Pizza is on it's way! page **and** returns a database record of the whole order
 
-### Analyzing the Bundle Size
+**"Pizza is on its Way" Wireframe:**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+> Get the gif: https://giphy.com/gifs/happiness-9fuvOqZ8tbZOU
 
-### Making a Progressive Web App
+![Pizza](https://i.imgur.com/AkId0mo.gif)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## FAQs
 
-### Advanced Configuration
+**How do I return a database record of the order?**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+One of your goals is to return a database record of the order - for this you'll need to write a post request. For more detailed steps, use the below:
 
-### Deployment
+1. Create a new state
+2. Post to [reqres](https://reqres.in/) database with `axios`
+3. Log data in console
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Resources
 
-### `yarn build` fails to minify
+👀 [Peek at Uber Eats for Inspiration](https://ubereats.com/)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Submission format
+
+Follow these steps for completing your project.
+
+- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo). **Please don't merge your own pull request**
+- [ ] Add your project manager as a reviewer on the pull-request
+- [ ] Your TL will count the project as complete by merging the branch back into master.
+
+## Grading rubric
+
+[NEED TO ADD: Sprint challenge grading rubric](https://www.notion.so/e7b32e56ebad4f57b3521efb886f4508)
